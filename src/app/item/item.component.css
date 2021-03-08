@@ -1,0 +1,54 @@
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  width: 110px;
+  font-size: 14px;
+}
+
+.price {
+  display: flex;
+  flex: 1;
+}
+
+.fas {
+  padding: 20px;
+}
+
+/* tooltip start */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 80px;
+  color: black;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-size: 12px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  top: 75%;
+  left: -35px;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+@media only screen and (min-width: 768px) {
+  .title {
+    width: 400px;
+    font-size: 18px;
+  }
+}

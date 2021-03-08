@@ -1,0 +1,52 @@
+<form
+  #filterForm="ngForm"
+  class="form"
+  (ngSubmit)="emitSubmitEvent(filterForm)"
+>
+  <p class="title">Filter Inventory list:</p>
+  <div class="search-options">
+    <div class="option">
+      <label for="minPrice" class="label">Minimum Item Price:</label>
+      <input
+        type="number"
+        name="minPrice"
+        id="minPrice"
+        class="input"
+        placeholder="Enter minimum product price"
+        ngModel
+      />
+    </div>
+    <div class="option">
+      <label for="maxPrice" class="label">Maximum Item Price:</label>
+      <input
+        type="number"
+        name="maxPrice"
+        id="maxPrice"
+        class="input"
+        placeholder="Enter maximum product price"
+        ngModel
+      />
+    </div>
+    <div class="option">
+      <label for="maxCount" class="label">Item Count:</label>
+      <input
+        type="text"
+        name="maxCount"
+        id="maxCount"
+        class="input"
+        placeholder="Enter maximum product count"
+        ngModel
+      />
+    </div>
+  </div>
+  <button class="button">Submit</button>
+  <div class="extra-form-options">
+    <p (click)="emitClearEvent()">See All Inventory</p>
+    <p (click)="toggleAdding()">Add Item</p>
+  </div>
+  <app-add-form
+    *ngIf="adding"
+    (addEvent)="addToInventory($event)"
+    (closeEvent)="toggleAdding()"
+  ></app-add-form>
+</form>

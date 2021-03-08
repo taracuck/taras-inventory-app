@@ -1,0 +1,49 @@
+<div class="popUp">
+  <form
+    #AddForm="ngForm"
+    class="popUp-form"
+    (ngSubmit)="emitAddEvent(AddForm)"
+    novalidate
+  >
+    <i class="far fa-window-close" (click)="emitCloseEvent()"></i>
+    <h3 class="popUp-form-title">Add Item:</h3>
+    <label for="name" class="label">Name:</label>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      class="input"
+      required
+      placeholder="Enter product name"
+      ngModel
+    />
+    <p *ngIf="nameError" class="error-message">
+      Please enter valid name with at least 3 characters
+    </p>
+    <label for="price" class="label">Price:</label>
+    <input
+      type="number"
+      name="price"
+      id="price"
+      class="input"
+      placeholder="Enter product price"
+      required
+      ngModel
+      min="0"
+      step="2"
+    />
+    <p *ngIf="priceError" class="error-message">Please enter valid price</p>
+    <label for="count" class="label">Count:</label>
+    <input
+      type="number"
+      name="count"
+      id="count"
+      class="input"
+      required
+      placeholder="Enter product count"
+      ngModel
+    />
+    <p *ngIf="countError" class="error-message">Please enter valid count</p>
+    <button class="button">Add</button>
+  </form>
+</div>

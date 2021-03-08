@@ -1,1 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
+body,
+h1,
+h2,
+h3,
+p,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #cfccd6;
+}
+
+.popUp {
+  position: fixed;
+  z-index: 1;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popUp-form {
+  width: 75%;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+}
+
+.label {
+  padding: 10px 0px 5px 0px;
+  font-size: 12px;
+}
+
+.input {
+  border: none;
+  border-bottom: 1px solid gray;
+  font-size: 12px;
+  display: flex;
+  flex: 1;
+  padding: 10px 0px 5px 0px;
+  margin-left: 5px;
+}
+
+.button {
+  background-color: black;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  margin: 10px 0px;
+}
+
+.fa-window-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.popUp-form-title {
+  font-weight: bolder;
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+  border-top: 2px solid red;
+  font-size: 12px;
+}
+
+@media only screen and (min-width: 768px) {
+  .label {
+    font-size: 18px;
+  }
+  .input {
+    margin-left: 0px;
+  }
+}

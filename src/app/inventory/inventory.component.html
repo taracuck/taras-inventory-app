@@ -1,0 +1,24 @@
+<div class="page-content">
+  <app-header></app-header>
+  <app-filter-form
+    (submitEvent)="setFilter($event)"
+    (clearEvent)="clearFilter()"
+    (addEvent)="addItem($event)"
+  ></app-filter-form>
+  <ul class="item-list">
+    <li class="list-item column-names">
+      <h3 class="title">Name</h3>
+      <h3 class="price">Price</h3>
+      <h3>Count</h3>
+    </li>
+    <p *ngIf="inventory.length === 0" class="no-items-text">
+      You currently have no inventory items.
+    </p>
+    <app-item
+      *ngFor="let item of inventory"
+      [itemRef]="item"
+      (updateInventoryEvent)="updateInventoryItem($event)"
+      (deleteEvent)="deleteItem($event)"
+    ></app-item>
+  </ul>
+</div>

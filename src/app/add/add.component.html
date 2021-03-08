@@ -1,0 +1,17 @@
+<form [formGroup]="form">
+  <label formControlName="name">Name</label>
+  <input formControlName="name" min="3" />
+  <span *ngIf="form.controls.age.errors?.invalidName">
+    Name should have at least three characters
+  </span>
+  <label formControlName="price">Price</label>
+  <input formControlName="price" />
+  <span *ngIf="form.controls.price.errors?.invalidNumber">
+    // Price should be a number
+  </span>
+  <label formControlName="count">Count</label>
+  <input formControlName="count" />
+  <span *ngIf="form.controls.count.errors?.invalidNumber">
+    // Age should be a number
+  </span>
+</form>

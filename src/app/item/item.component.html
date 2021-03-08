@@ -1,0 +1,19 @@
+<li class="list-item">
+  <div class="tooltip">
+    <i class="fas fa-pen" (click)="toggleUpdating()"></i>
+    <span class="tooltiptext">Update Item</span>
+  </div>
+  <h2 class="title">{{ itemRef.name }}</h2>
+  <p class="price">${{ itemRef.price.toFixed(2) }}</p>
+  <p>{{ itemRef.count }}</p>
+  <app-update-form
+    *ngIf="updating"
+    [updateItemRef]="itemRef"
+    (updateEvent)="updateInventory($event)"
+    (closeEvent)="toggleUpdating()"
+  ></app-update-form>
+  <div class="tooltip">
+    <i class="fas fa-trash" (click)="emitDeleteEvent(itemRef)"></i>
+    <span class="tooltiptext">Delete Item</span>
+  </div>
+</li>
