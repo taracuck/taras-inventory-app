@@ -1,0 +1,81 @@
+<div class="popUp">
+  <form
+    #AddUpdateForm="ngForm"
+    class="popUp-form"
+    (ngSubmit)="emitSubmitEvent(AddUpdateForm)"
+  >
+    <i class="far fa-window-close" (click)="emitCloseEvent()"></i>
+    <h3 class="popUp-form-title" *ngIf="addBool">Add Item:</h3>
+    <h3 class="popUp-form-title" *ngIf="updateBool">Update Item:</h3>
+    <label for="name" class="label">Name:</label>
+    <input
+      *ngIf="addBool"
+      type="text"
+      name="name"
+      id="name"
+      class="input"
+      required
+      placeholder="Enter product name"
+      ngModel
+    />
+    <input
+      *ngIf="updateBool"
+      type="text"
+      name="name"
+      id="name"
+      class="input"
+      required
+      placeholder="Enter product name"
+      ngModel="{{ updateItemRef.name }}"
+    />
+    <p *ngIf="nameError" class="error-message">
+      Please enter valid name with at least 3 characters
+    </p>
+    <label for="price" class="label">Price:</label>
+    <input
+      *ngIf="addBool"
+      type="number"
+      name="price"
+      id="price"
+      class="input"
+      required
+      placeholder="Enter product price"
+      ngModel
+    />
+    <input
+      *ngIf="updateBool"
+      type="number"
+      name="price"
+      id="price"
+      class="input"
+      required
+      placeholder="Enter product price"
+      ngModel="{{ updateItemRef.price }}"
+    />
+    <p *ngIf="priceError" class="error-message">Please enter valid price</p>
+    <label for="count" class="label">Count:</label>
+    <input
+      *ngIf="addBool"
+      type="number"
+      name="count"
+      id="count"
+      class="input"
+      required
+      placeholder="Enter product count"
+      ngModel
+    />
+    <input
+      *ngIf="updateBool"
+      type="number"
+      name="count"
+      id="count"
+      class="input"
+      required
+      placeholder="Enter product count"
+      ngModel="{{ updateItemRef.count }}"
+    />
+    <p *ngIf="countError" class="error-message">Please enter valid count</p>
+    <button class="button" *ngIf="addBool">Add</button>
+    <button class="button" *ngIf="updateBool">Update</button>
+  </form>
+</div>

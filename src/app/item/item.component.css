@@ -4,8 +4,13 @@
   justify-content: space-between;
 }
 
+.item-info {
+  display: flex;
+  width: 100%;
+}
+
 .title {
-  width: 110px;
+  width: 50%;
   font-size: 14px;
 }
 
@@ -48,7 +53,6 @@
 
 @media only screen and (min-width: 768px) {
   .title {
-    width: 400px;
     font-size: 18px;
   }
 }

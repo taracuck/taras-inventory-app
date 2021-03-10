@@ -44,9 +44,10 @@
     <p (click)="emitClearEvent()">See All Inventory</p>
     <p (click)="toggleAdding()">Add Item</p>
   </div>
-  <app-add-form
+  <app-add-update-form
     *ngIf="adding"
+    [addBool]="adding"
     (addEvent)="addToInventory($event)"
-    (closeEvent)="toggleAdding()"
-  ></app-add-form>
+    (addCloseEvent)="toggleAdding()"
+  ></app-add-update-form>
 </form>

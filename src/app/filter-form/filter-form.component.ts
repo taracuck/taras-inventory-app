@@ -27,7 +27,6 @@ export class FilterFormComponent implements OnInit {
   };
 
   toggleAdding = (): void => {
-    console.log('switching');
     this.adding = !this.adding;
   };
 
